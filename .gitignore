@@ -1,0 +1,22 @@
+# Secrets
+.env
+
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+*.pyc
+
+# Node / React
+frontend/node_modules/
+frontend/build/
+
+# Generated files (these are outputs, not source code)
+generated_qr/*
+generated_labels/*
+!generated_qr/.gitkeep
+!generated_labels/.gitkeep
+
+# OS/editor junk
+.vscode/
+.DS_Store
