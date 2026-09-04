@@ -1,13 +1,20 @@
 from fastapi import FastAPI
-from app.database.db import engine, Base
-from app.models import product
-from app.routes import product as product_routes
 
-Base.metadata.create_all(bind=engine)
+from app.database.db import engine, Base
+from app.models import product, qr_code
+from app.routes import product as product_routes
+from app.routes import qr_code as qr_routes
+
 
 app = FastAPI()
 
+
+Base.metadata.create_all(bind=engine)
+
+
 app.include_router(product_routes.router)
+app.include_router(qr_routes.router)
+
 
 @app.get("/")
 def read_root():
